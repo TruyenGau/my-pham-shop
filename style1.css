@@ -1,0 +1,857 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul{
+    list-style: none;
+}
+/*Thiết kế thẻ a */
+a{
+    text-decoration: none;
+}
+/*thiết kế container*/
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+header{
+    background-color: #81ecec;
+    text-align: center;
+    height: 50px;
+}
+
+/*.menu-main{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    overflow: hidden;*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    width: 100%;*/
+/*}*/
+
+/*......................nav...........................................................................................*/
+nav{
+    background-color: #0984e3;
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul li, a{
+    color: white;
+    /*chỉnh chữ*/
+    font-size: 12px;
+}
+/*biến chữ đà nẵng thành màu vàng*/
+nav ul li:nth-child(2) a {
+    color: #FFF200;
+}
+/* thiết kế đà nẵng */
+nav ul li:nth-child(2) i{
+    color: #FFF200;
+    font-size: 15px;
+    /*cách xa 1 chút*/
+    margin-left: 6px;
+}
+nav ul li:nth-child(3) {
+    position: relative;
+}
+nav ul li:nth-child(3) input{
+    height: 25px;
+    width:200px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 6px;
+    outline: none;
+}
+nav ul li:nth-child(3) i {
+    position: absolute;
+    font-size: 15px;
+    right: 12px;
+    color: black;
+    line-height: 30px;
+    cursor: pointer;
+}
+/*giỏ hàng*/
+nav ul li:nth-child(4) button{
+    height: 30px;
+    padding: 0 12px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgb(34, 178, 106);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+nav ul li:nth-child(4) button i {
+    margin-right: 6px;
+}
+nav ul li:nth-child(4) button:hover{
+    background-color: rgb(100, 97, 97);
+}
+/*lịch sử đơn hàng*/
+nav ul li:nth-child(5){
+    text-align: center;
+}
+nav ul li:nth-child(5):hover a{
+    color: #FFF200;
+}
+nav ul li:nth-child(6)  a {
+   color: #FFF200;
+}
+/*nút màu vàng*/
+.btn-content{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #FFF200;
+    /*thẻ xuống dòng khi có thẻ span*/
+    display: block;
+    float: left;
+    margin-right: 5px;
+}
+.btn-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-color: #FFF200;
+    display: block;
+    pointer-events: none;
+    animation: btnani 1s linear infinite;
+}
+/*tạo cái animation*/
+@keyframes btnani{
+    from{
+        opacity: 0.4;
+    }
+    to{
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+nav ul li:nth-child(7):hover a{
+    color: #FFF200;
+}
+nav ul li:nth-child(8):hover a{
+    color: #FFF200;
+}
+nav ul li:nth-child(9):hover a{
+    color: #FFF200;
+}
+/*.............menu-bar...............................................................................................*/
+/*làm thanh điều hướng*/
+.menu-bar{
+    /*........chỉnh màu cho thanh điều hướng*/
+    background-color: #69b5ff;
+   /*padding:12px 0;*/
+}
+.menu-bar ul{
+    display: flex;
+    justify-content: space-between;
+}
+.menu-bar ul li a {
+    color: black;
+    font-size: 14px;
+}
+/*.menu-bar ul li:nth-child(6) a{*/
+/*    color: #F51212;*/
+
+/*}*/
+/*tạo khoảng cách cho thẻ i*/
+.menu-bar ul li a i{
+    margin-right: 6px;
+    font-size: 16px;
+}
+.menu-bar-content > ul > li{
+    padding:15px 6px;
+    transition: all 0.3s ease;
+}
+.menu-bar ul li:hover{
+    background-color: white;
+}
+/*làm cái giảm giá */
+.menu-bar-content > ul > li:nth-child(9){
+    position: relative;
+}
+.menu-bar-content > ul > li:nth-child(9):before{
+    position: absolute;
+    content: "Giảm 5%";
+    display: block;
+    height: 15px;
+    width: 45px;
+    background-color: #F51212;
+    border-radius: 5px;
+    right:0px;
+    top:0px;
+    font-size: 10px;
+    padding-left: 3px;
+    color: #fff;
+}
+.menu-bar-content > ul > li:nth-child(9):after{
+    position: absolute;
+    content: "";
+    background-color: #F51212;
+    height: 7px;
+    width: 7px;
+    display: block;
+    top: 12px;
+    right: 10px;
+    z-index: 2;
+    transform: rotate(45deg);
+}
+/*.........adress-form-content........................................................................................*/
+/*tạo cái form đăng nhập*/
+.adress-form{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    /*độ mờ*/
+    background-color: rgba(0, 0, 0,0.6);
+    top: 0;
+    left: 0;
+    /*vào giữa*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+    display: none;
+    z-index: 999;
+}
+/*khung chính giữa*/
+.adress-form-content{
+    width: 400px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+/*đi vào thẻ form*/
+.adress-form-content form{
+    padding: 12px 40px;
+}
+.adress-form-content h2{
+    font-size: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+.adress-form-content h2 span{
+    display: block;
+    position: absolute;
+    height: 30px;
+    padding: 0 6px;
+    border: 1px solid #ddd;
+    right: 12px;
+    cursor: pointer;
+    /*chỉnh thẳng hàng ra giữa*/
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 30px;
+    color: #333;
+    border-radius: 5px;
+}
+.adress-form-content form p{
+    font-size: 16px;
+}
+.adress-form-content form input, select{
+    height: 45px;
+    /*xuống dòng*/
+    display: block;
+    /*cách giữa to ra*/
+    width: 100%;
+    margin-top: 20px;
+    border:1px solid #ddd;
+    padding: 6px;
+    border-radius: 5px;
+}
+.adress-form-content form button{
+    margin-top: 20px;
+    height: 30px;
+    width: 80%;
+    cursor: pointer;
+    background-color: #F97E0E;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
+/*.............................submenu................................................................................*/
+.menu-bar-content ul li{
+    position: relative;
+}
+.submenu{
+    position: absolute;
+    background-color: #ddd;
+    width: 300px;
+    /*tự động auto*/
+    height: auto;
+    left: 0;
+    top: 100%;
+    padding: 12px;
+    display: none;
+}
+.submenu ul{
+    display: flex;
+    flex-direction: column;
+}
+.submenu ul li{
+    padding: 6px 0;
+}
+.submenu ul li:hover a{
+    color:#0fbcf9;
+}
+.submenu ul li:hover {
+    background:none;
+}
+.menu-bar-content ul li:hover .submenu{
+    display: block;
+}
+/*.......................slider.......................................................................................*/
+li{
+    list-style: none;
+}
+.slider{
+    padding: 20px 0;
+    height: 350px;
+}
+.slider-content{
+    display: flex;
+    justify-content: space-between;
+}
+.slider-content-left{
+    width: 65%;
+}
+.slider-content-left-top{
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+/*.slider-content-left-top:hover i{*/
+/*    opacity: 1;*/
+/*}*/
+.slider-content-left-top img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*làm thanh tiêu đề*/
+.slider-content-left-bottom{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #ddd;
+    border-top: none ;
+    height: 50px;
+ }
+.slider-content-left-bottom li{
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    padding: 6px 0;
+    height: 100%;
+    line-height: 38px;
+    position: relative;
+}
+.slider-content-left-bottom li:before{
+    display: block;
+    content: "";
+    position: absolute;
+    height: 70%;
+    width: 1px;
+    background-color: #ddd;
+    right: 0;
+}
+/*tạo thanh vàng phía trên*/
+.slider-content-left-bottom li.active{
+    border-top: 4px solid #FFF200 ;
+}
+.slider-content-right{
+    width: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 30px;
+    justify-content: space-around;
+}
+/*set các thẻ li*/
+.slider-content-right li{
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    margin-bottom: 3px;
+}
+/*chỉnh kích thước ảnh*/
+.slider-content-right li img{
+    height: 170px;
+    width: 170px;
+}
+.slider-content-left-top-btn{
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.slider-content-left-top-btn i {
+    color: #333;
+    font-size: 32px;
+    height: 50px;
+    width: 25px;
+    background-color: rgb(238, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    /*rơ chuột vào sẽ hiện*/
+    opacity: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.submenu{
+    z-index: 10;
+}
+/*....................slider..........js1.............................................................................*/
+.slider-content-left-top img{
+    position: absolute;
+}
+.slider-content-left-top a:nth-child(2) img{
+    transform: translateX(100%);
+}
+.slider-content-left-top a:nth-child(3) img{
+    transform: translateX(200%);
+}
+.slider-content-left-top a:nth-child(4) img{
+    transform: translateX(300%);
+}
+.slider-content-left-top a:nth-child(5) img{
+    transform: translateX(400%);
+}
+.slider-content-left-top-container{
+    position: relative;
+    /*để đè xuống k cho dàn hàng*/
+    overflow: hidden;
+}
+.slider-content-left-top-container:hover i{
+    opacity: 1;
+}
+.slider-content-left-top{
+    transition: all 0.3s ease;
+}
+/*...........................slider...................................................................................*/
+.slider-content-left-bottom li.active{
+    border-top: 4px solid #FFF200 ;
+    font-weight: bold;
+}
+.slider-content-left-bottom li{
+    border-top: 4px solid #fff ;
+    border-bottom: 4px solid #fff;
+}
+/*................banner1.............................................................................................*/
+.benner-one{
+    margin-top: 30px;
+}
+/*................slider-product......................................................................................*/
+/*tạo màu cho cái vùng săn mỗi ngày*/
+.slider-product-one-content{
+    background-color: #47ffeb;
+    padding: 12px;
+}
+.slider-product-one-content-title h2{
+    font-style: italic;
+    padding: 12px 0;
+}
+.slider-product-one-content-items{
+    display: flex;
+    justify-content: space-evenly;
+}
+/*hover vô cái ảnh*/
+.slider-product-one-content-item:hover > img{
+    transform: translateY(-20px);
+}
+.slider-product-one-content-item{
+    width: 19%;
+    background-color: white;
+    padding: 50px 12px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*tạo cái khung để gom ảnh và chữ lại */
+.slider-product-one-content-item > img{
+    width: 100%;
+    transition: all 0.5s ease;
+}
+/*tạo khung giản cách chữ*/
+.slider-product-one-content-item-text{
+    padding-top: 20px;
+}
+.slider-product-one-content-item-text li{
+    margin-top: 6px;
+}
+/*set cái đầu tiên cái icon logo*/
+.slider-product-one-content-item-text li:first-child{
+    height: 30px;
+    width: 70%;
+    background-color: #DE1C05;
+    display: inline-block;
+    margin-bottom: 20px;
+    align-items: center;
+    line-height: 30px;
+    border-radius: 40px;
+}
+.slider-product-one-content-item-text li:first-child p{
+    color: #fff;
+    font-size: 12px;
+}
+.slider-product-one-content-item-text li:first-child img{
+    width: 30px;
+    float: left;
+    margin-right: 6px;
+}
+.slider-product-one-content-item-text li:nth-child(2):hover {
+    color: #4a5dff;
+}
+.slider-product-one-content-item-text li:nth-child(4) a {
+    text-decoration: line-through;
+    color: #333;
+}
+.slider-product-one-content-item-text li:nth-child(5)  {
+    font-weight: bold;
+}
+.slider-product-one-content-item-text li:last-child i{
+    color: #F97E0E;
+}
+/*...............................slider-product 10....................................................................*/
+.slider-product-one-content-container{
+    position: relative;
+    overflow: hidden;
+}
+.slider-product-one-content-btn{
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.slider-product-one-content-btn i {
+    color: #333;
+    font-size: 32px;
+    height: 50px;
+    width: 25px;
+    background-color: rgb(238, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.slider-product-one-content-items-content{
+    position: relative;
+    height: 550px;
+    transition: all 0.3s ease;
+}
+.slider-product-one-content-items{
+    position: absolute;
+}
+.slider-product-one-content-items:nth-child(2){
+    transform: translateX(100%);
+}
+.slider-product-one-content-items:nth-child(3){
+    transform: translateX(200%);
+}
+/*..................fix lỗi...........................................................................................*/
+.slider-content-left{
+    width: 70%;
+}
+.slider-content-right{
+    width: 30%;
+}
+.slider-content-right{
+    padding: 0;
+}
+.benner-one{
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.slider-product-one-content{
+    padding: 0;
+}
+.slider-product-one-content-title{
+    padding: 0 12px;
+}
+/*.............................product-gallery........................................................................*/
+.product-gallery-one-content-product{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.product-gallery-one-content-product-item{
+    width: 20%;
+    padding: 50px 12px 12px;
+    border: 1px solid rgb(235, 233, 233);
+    cursor: pointer;
+}
+/*copy cái trên xuống*/
+.product-gallery-one-content-product-item:hover{
+    box-shadow: 3px 3px 5px #ddd;
+
+}
+.product-gallery-one-content-product-item:hover > img{
+    transform: translateY(-20px);
+}
+.product-gallery-one-content-product-item > img{
+    width: 100%;
+    transition: all 0.3s ease;
+}
+.product-gallery-one-content-product-item-text{
+    padding-top: 20px;
+}
+.product-gallery-one-content-product-item-text li{
+    margin-top: 6px;
+}
+.product-gallery-one-content-product-item-text li:first-child{
+    height: 30px;
+    width: 70%;
+    background-color: #DE1C05;
+    display: inline-block;
+    margin-bottom: 20px;
+    align-items: center;
+    line-height: 30px;
+    border-radius: 40px;
+}
+.product-gallery-one-content-product-item-text li:first-child p{
+    color: #fff;
+    font-size: 12px;
+}
+.product-gallery-one-content-product-item-text li:first-child img{
+    width: 30px;
+    float: left;
+    margin-right: 6px;
+}
+.product-gallery-one-content-product-item-text li:nth-child(2):hover {
+    color: #4a5dff;
+}
+.product-gallery-one-content-product-item-text li:nth-child(4) a {
+    text-decoration: line-through;
+    color: #333;
+}
+.product-gallery-one-content-product-item-text li:nth-child(5)  {
+    font-weight: bold;
+}
+.product-gallery-one-content-product-item-text li:last-child i{
+    color: #F97E0E;
+}
+.product-gallery-one{
+    margin-top: 30px;
+}
+.product-gallery-one-content-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.product-gallery-one-content-title h2{
+    color: #333;
+}
+.product-gallery-one-content-title ul li a{
+    color: #333;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+.product-gallery-one-content-title ul{
+    display: flex;
+}
+.product-gallery-one-content-title ul li {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    margin-left: 12px;
+    border-radius: 40px;
+}
+.product-gallery-one-content-title ul li:hover a{
+    color: tomato;
+}
+/*........................footer............................*/
+.footer{
+    background-color: #7f8c8d;
+    padding: 30px 0;
+    height: 250px;
+}
+.container1{
+    max-width: 1170px;
+    margin: auto;
+}
+.footer-col ul{
+    list-style: none;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-col{
+    /*color: #333;*/
+    /*font-size: 12px;*/
+    /*transition: all 0.3s ease;*/
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color:white;
+    padding-left: 8px;
+}
+.footer-col .social-links li{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255,255,255,0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+}
+.footer-col .social-links li:hover{
+    color: #47ffeb;
+    background-color: black;
+}
+/*.......................................form hỏi đáp.................................................................*/
+.adress-form1{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,0.6);
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+    display: none;
+    z-index: 999;
+}
+.adress-form-content1{
+    width: 400px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.adress-form-content1 form{
+    padding: 12px 40px;
+}
+.adress-form-content1 h2{
+    font-size: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+.adress-form-content1 h2 span{
+    display: block;
+    position: absolute;
+    height: 30px;
+    padding: 0 6px;
+    border: 1px solid #ddd;
+    right: 12px;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 30px;
+    color: #333;
+    border-radius: 5px;
+}
+.adress-form-content1 form p{
+    font-size: 16px;
+}
+.adress-form-content1 form input, select{
+    height: 45px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    border:1px solid #ddd;
+    padding: 6px;
+    border-radius: 5px;
+}
+.adress-form-content1 form button{
+    margin-top: 20px;
+    height: 30px;
+    width: 80%;
+    cursor: pointer;
+    background-color: #F97E0E;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+@media (max-width: 520px){
+.slider-product-one-content-container {
+    display: flex;
+    flex-direction: row;
+}
+.product-gallery-one-content-product {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.product-gallery-one-content-product-item {
+    width: 100%;
+}
+.product-gallery-one-content-product-item img{
+    width: 80%;
+    /* margin-right: 60%; */
+    padding-left: 20%;
+}
+.product-gallery-one-content-product-item-text {
+    padding-left: 20%;
+}
+.product-gallery-one-content-product-item-text li:nth-child(1) p
+{
+   padding-left: 10%;
+}
+.banner-content a img {
+    width: 130%;
+}
+  }
+
+  .banner-content a img {
+    width: 100%;
+    height: 50px;
+}

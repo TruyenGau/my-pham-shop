@@ -1,0 +1,16 @@
+header{
+    background-color: #81ecec;
+    text-align: center;
+    height: 110px;
+}
+nav ul li, a{
+    color: white;
+    font-size: 12px;
+}
+nav{
+    background-color: #F51212;
+}
+.menu-bar{
+    background-color: antiquewhite;
+    /*padding:12px 0;*/
+}
